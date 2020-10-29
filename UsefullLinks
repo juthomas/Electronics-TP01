@@ -1,2 +1,6 @@
 /Users/labelec/.brew/Cellar/avr-gcc/9.3.0/avr/include/avr/iom328p.h
 http://bravo.univ-tln.fr/er/AtMega328/timer/Timer.pdf
+
+
+http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf
+https://blog.wokwi.com/5-ways-to-blink-an-led-with-arduino/
