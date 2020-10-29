@@ -1,5 +1,6 @@
 FILENAME	= main
-PORT		= /dev/cu.SLAB_USBtoUART
+PORT		= /dev/ttyUSB0
+# PORT		= /dev/cu.SLAB_USBtoUART
 DEVICE		= atmega328p
 PROGRAMMER	= arduino
 BAUD		= 115200
@@ -62,6 +63,7 @@ hex:
 	fi
 
 flash:
+	
 	@if [ $(MUTE) = FALSE ];then\
 		avrdude -v -p $(DEVICE) -c $(PROGRAMMER) -P $(PORT) -b $(BAUD) -U flash:w:$(FILENAME).hex:i;\
 	else\
