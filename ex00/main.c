@@ -5,20 +5,13 @@
 
 int main()
 {
+	// On met OC1A (PB1) en OUTPUT
 	DDRB |= 1 << 1;
-  TCCR1A = 0;
-  TCCR1B = 0;
-
-  OCR1A = 32250;
-  // OCR1B = 50000;
-
-//16.9.3   
-
-  // section 15.9.2 prescaller a 256
-  // TCCR1A |= 1 << COM1A1;
-  //4 0 1 00 CTCOCR1AImmediateMAX
-  TCCR1B = (1<<WGM12) |(1 << CS12);
-  // 256 * 31250 = 8 000 000 soit 0.5sec vu que le quartz est a 16Mhz
-  TCCR1A |= 1 << COM1A0;
-  for(;;);
+	// On met le timer sur 500ms: 16MHz/(256 * 0.5) = 32250
+	OCR1A = 32250;
+	// On met le prescaler sur 256 pour le timer 1 (16.11.2)
+	TCCR1B = (1 << WGM12) |(1 << CS12);
+	// On Toggle OC1A a chaque fois que le timer a match (Table 16-1)
+	TCCR1A = 1 << COM1A0;
+	for(;;);
 }
