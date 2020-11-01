@@ -1,7 +1,5 @@
 FILENAME	= main
-# PORT		= /dev/ttyUSB1
-PORT		= /dev/ttyUSB0
-# PORT		= /dev/cu.SLAB_USBtoUART
+PORT		= /dev/tty.usbserial-0001
 DEVICE		= atmega328p
 PROGRAMMER	= arduino
 BAUD		= 115200
