@@ -9,7 +9,7 @@ F_CPU		= 16000000 #16 Mhz quartz #2 Mhz Cpu Clock (Quartz / 8)
 COMPILE		= avr-gcc -Wall -mmcu=$(DEVICE) -DF_CPU=${F_CPU}
 COLOR		= \0033[1;35m
 
-MUTE		= FALSE
+MUTE		= TRUE
 
 all: hex flash
 
